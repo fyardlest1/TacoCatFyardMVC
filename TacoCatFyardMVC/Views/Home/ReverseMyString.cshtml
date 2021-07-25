@@ -1,0 +1,41 @@
+﻿@model TacoCatFyardMVC.Models.Palindrome
+
+    <div class="container">
+        <div class="row my-4 row-cols-1 row-cols-lg-2">
+            <div class="col">
+                <h1 class='display-5 fw-bold lh-1 logoFont'>Rewind Selector: A CODING PROJECT</h1>
+                <h4 class='text-dark pb-3'>
+                    Here is a javascript coding exercise using arrays. The program displays your strings in reverse.
+                </h4>
+                <h4 class='lead text-dark'>
+                    Note that your string(s) can be a <strong>Palindrome</strong>
+                </h4>
+                <cite>"A palindrome is a word, number, phrase, or other sequence of characters which ca be read the same backward as forward, such as level, refer, radar."</cite>
+                <h4 class='text-dark py-3'>Note that this application take care of palindrome, i,e word, phrase, and will also remove punctuation marks.</h4>
+            </div>
+            <div class="col">
+                <div>
+                    <h5>Enter a string</h5>
+                    @* Form goes here *@
+                    <form class="row gy-2 gx-3" asp-action="ReverseMyString" asp-controler="Home" method="post">
+                        <div class="col">
+                            <input asp-for="InputWord" class="form-control" value="@Model.InputWord" placeholder="* type a word" />
+                            <div class="col-12 d-flex align-items-center justify-content-start justify-content-lg-end">
+                                <button id="btnSubmit" type="submit" class="btn btn-dark btn-lg mt-2">
+                                    Palindrome Test
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <h5 class="mt-5 border-bottom border-2">Reversed Result</h5>
+                    <div class="col">
+                        <p class="form-control">@Model.RevWord</p>
+                    </div>
+                    <h2 class="mt-5 border-bottom border-2">Palindrome Result</h2>
+                    <div class="table-responsive">
+                        <p id="results">@Model.Message</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
